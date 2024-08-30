@@ -1,0 +1,83 @@
+[
+    {
+      "projectName": "Project Alpha",
+      "description": "A web application for task management.",
+      "githubLink": "https://github.com/user/project-alpha",
+      "linkedin": "https://linkedin.com/in/user1",
+      "author": "User One",
+      "image": "https://example.com/images/project-alpha.png"
+    },
+    {
+      "projectName": "Beta App",
+      "description": "An AI-powered chatbot for customer support.",
+      "githubLink": "https://github.com/user/beta-app",
+      "linkedin": "https://linkedin.com/in/user2",
+      "author": "User Two",
+      "image": "https://example.com/images/beta-app.png"
+    },
+    {
+      "projectName": "Gamma Tool",
+      "description": "A command-line tool for data analysis.",
+      "githubLink": "https://github.com/user/gamma-tool",
+      "linkedin": "https://linkedin.com/in/user3",
+      "author": "User Three",
+      "image": "https://example.com/images/gamma-tool.png"
+    },
+    {
+      "projectName": "Delta Network",
+      "description": "A social network for developers.",
+      "githubLink": "https://github.com/user/delta-network",
+      "linkedin": "https://linkedin.com/in/user4",
+      "author": "User Four",
+      "image": "https://example.com/images/delta-network.png"
+    },
+    {
+      "projectName": "Epsilon Platform",
+      "description": "An e-commerce platform for local businesses.",
+      "githubLink": "https://github.com/user/epsilon-platform",
+      "linkedin": "https://linkedin.com/in/user5",
+      "author": "User Five",
+      "image": "https://example.com/images/epsilon-platform.png"
+    },
+    {
+      "projectName": "Zeta Bot",
+      "description": "A bot for automating social media posts.",
+      "githubLink": "https://github.com/user/zeta-bot",
+      "linkedin": "https://linkedin.com/in/user6",
+      "author": "User Six",
+      "image": "https://example.com/images/zeta-bot.png"
+    },
+    {
+      "projectName": "Eta Dashboard",
+      "description": "A dashboard for monitoring server health.",
+      "githubLink": "https://github.com/user/eta-dashboard",
+      "linkedin": "https://linkedin.com/in/user7",
+      "author": "User Seven",
+      "image": "https://example.com/images/eta-dashboard.png"
+    },
+    {
+      "projectName": "Theta App",
+      "description": "A mobile app for tracking fitness activities.",
+      "githubLink": "https://github.com/user/theta-app",
+      "linkedin": "https://linkedin.com/in/user8",
+      "author": "User Eight",
+      "image": "https://example.com/images/theta-app.png"
+    },
+    {
+      "projectName": "Iota Game",
+      "description": "A multiplayer online game.",
+      "githubLink": "https://github.com/user/iota-game",
+      "linkedin": "https://linkedin.com/in/user9",
+      "author": "User Nine",
+      "image": "https://example.com/images/iota-game.png"
+    },
+    {
+      "projectName": "Kappa Service",
+      "description": "A microservice for handling payments.",
+      "githubLink": "https://github.com/user/kappa-service",
+      "linkedin": "https://linkedin.com/in/user10",
+      "author": "User Ten",
+      "image": "https://example.com/images/kappa-service.png"
+    }
+  ]
+  
