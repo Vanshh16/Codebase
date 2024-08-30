@@ -36,8 +36,8 @@ function Projects() {
         <div className="items-center grid grid-cols-1 lg:grid-cols-2 gap-10">
           {projects.map((project, index) => {
             return (
-              <div>
-                <ThreeDCardDemo key={index} project={project} />
+              <div key={index}>
+                <ThreeDCardDemo project={project} />
               </div>
             );
           })}
