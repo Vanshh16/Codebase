@@ -14,38 +14,38 @@ export default function Navbar() {
             <Image className="size-10" width={40} height={40} src="/assets/cb.png" />
             <span className="font-medium text-lg">CODEBASE</span>
           </Link>
-          <nav className="rounded-full bg-black border-white/[0.2] py-4 px-8 border space-x-4 flex gap-4">
+          <nav className="rounded-full bg-black border-white/[0.1] py-4 px-8 border space-x-4 flex gap-4">
             <Link
               href="/main"
-              className="font-medium flex items-center text-base transition-colors py-1 px-2 rounded-lg hover:border-zinc-600 border border-transparent"
+              className="font-medium flex items-center text-base transition-colors py-1 px-2 rounded-lg hover:border-zinc-800 border border-transparent"
               prefetch={false}
             >
               Home
             </Link>
             <Link
               href="/projectSection"
-              className="font-medium flex items-center text-base transition-colors py-1 px-2 rounded-lg hover:border-zinc-600 border border-transparent"
+              className="font-medium flex items-center text-base transition-colors py-1 px-2 rounded-lg hover:border-zinc-800 border border-transparent"
               prefetch={false}
             >
               Projects
             </Link>
             <Link
               href="/team"
-              className="font-medium flex items-center text-base transition-colors py-1 px-2 rounded-lg hover:border-zinc-600 border border-transparent"
+              className="font-medium flex items-center text-base transition-colors py-1 px-2 rounded-lg hover:border-zinc-800 border border-transparent"
               prefetch={false}
             >
               Team
             </Link>
             <Link
               href="#"
-              className="font-medium flex items-center text-base transition-colors py-1 px-2 rounded-lg hover:border-zinc-600 border border-transparent"
+              className="font-medium flex items-center text-base transition-colors py-1 px-2 rounded-lg hover:border-zinc-800 border border-transparent"
               prefetch={false}
             > 
               Events
             </Link>
             <a
               href="/main/#contact-us"
-              className="font-medium flex items-center text-base transition-colors py-1 px-2 rounded-lg hover:border-zinc-600 border border-transparent"
+              className="font-medium flex items-center text-base transition-colors py-1 px-2 rounded-lg hover:border-zinc-800 border border-transparent"
               prefetch={false}
             >
               Contact Us
