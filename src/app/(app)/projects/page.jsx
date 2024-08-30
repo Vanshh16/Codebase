@@ -34,10 +34,10 @@ function Projects() {
           </motion.h1>
         </div>
         <div className="items-center grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {projects.map((project) => {
+          {projects.map((project, index) => {
             return (
               <div>
-                <ThreeDCardDemo project={project} />
+                <ThreeDCardDemo key={index} project={project} />
               </div>
             );
           })}
