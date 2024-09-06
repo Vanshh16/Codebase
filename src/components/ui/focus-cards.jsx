@@ -37,7 +37,7 @@ export const Card = React.memo(({ member, index, hovered, setHovered }) => (
   </div>
 ));
 
-export function FocusCards({ members }) {
+export default function FocusCards({ members }) {
   const [hovered, setHovered] = useState(null);
   console.log(members);
 
