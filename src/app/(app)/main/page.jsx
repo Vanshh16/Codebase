@@ -5,10 +5,10 @@ import cb from "@/assets/cb.png";
 import bg1 from "@/assets/bg1.png";
 import Image from "next/image";
 import { SparklesCore } from "@/components/ui/sparkles";
-import Team from "../team/page";
 import Carousel from "@/components/Carousel";
 import { GlobeDemo } from "@/components/Globe";
-import { AppleCardsCarouselDemo, Events } from "@/components/Events";
+import { Events } from "@/components/Events";
+import { Vortex } from "@/components/ui/vortex";
 
 function Main() {
   const imageRef = useRef(null);
@@ -70,17 +70,17 @@ function Main() {
                 <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
 
                 {/* Core component */}
-                <SparklesCore
+                {/* <SparklesCore
                   background="transparent"
                   minSize={0.4}
                   maxSize={1}
                   particleDensity={1200}
                   className="w-full h-40"
                   particleColor="#FFFFFF"
-                />
+                /> */}
 
                 {/* Radial Gradient to prevent sharp edges */}
-                <div className="absolute inset-0 w-full h-full custom-gradient [mask-image:radial-gradient(350px_200px_at_top,transparent_70%,white)]"></div>
+                {/* <div className="absolute inset-0 w-full h-full custom-gradient [mask-image:radial-gradient(350px_200px_at_top,transparent_70%,white)]"></div> */}
               </div>
               <p className="text-slate-100 tracking-widest font-normal italic text-lg my-4 md:ml-28">
                 IIIT Kota's Open Source Technical Society champions cutting-edge
@@ -92,10 +92,20 @@ function Main() {
               onMouseLeave={handleMouseLeave}
               className="flex justify-center items-center"
             >
+              <div className="w-[calc(100%-4rem)] hidden md:block mx-auto rounded-md  h-[25rem] overflow-hidden">
+                <Vortex
+                rangeY={150}
+                particleCount={1000}
+                baseHue={120}
+                  backgroundColor="#FFFFFF00"
+                  className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-40 h-96"
+                ></Vortex>
+              </div>
+
               <Image
                 src={cb}
                 alt="Codebase Logo"
-                className="w-40 md:w-96 h-auto z-20 interactiveImage"
+                className="w-40 md:absolute md:top-10 rotatinngImage md:w-96 h-auto z-20"
                 ref={imageRef}
               />
             </div>
@@ -103,10 +113,10 @@ function Main() {
           <div className="h-40 bg-transparent flex flex-col items-center mx-auto space-y-4"></div>
           <div className="md:mt-80 rounded-xl bg-slate-950 p-8 flex flex-col items-center mx-auto space-y-4">
             {/* <h1 className="text-4xl font-bold text-blue-800">IIIT KOTA</h1> */}
-            <h2 className="text-5xl pt-2 tracking-wider font-semibold text-white">
+            <h2 className="md:text-5xl text-2xl pt-2 tracking-wider font-semibold text-white">
               Who are we?
             </h2>
-            <p className="text-slate-100 tracking-wide leading-8 font-normal text-lg my-4 mx-8">
+            <p className="text-slate-100 tracking-wide leading-8 font-normal text-sm md:text-lg my-4 mx-8">
               The Codebase club at IIIT Kota is a vibrant community dedicated to
               fostering creativity and innovation in the realm of technology.
               Comprising passionate students from diverse backgrounds, the club
@@ -132,46 +142,42 @@ function Main() {
             </h2>
             <Carousel />
           </div>
-          <div id="contact-us" className="grid grid-cols-1 lg:grid-cols-2">
+          <div
+            id="contact-us"
+            className="hidden lg:grid grid-cols-1 lg:grid-cols-2"
+          >
             <GlobeDemo />
             <div className="p-8 bg-black rounded-lg">
               <h2 className="text-6xl md:ml-32 tracking-widest font-extrabold text-white">
                 Join Us
               </h2>
-              <label className="input input-bordered m-4 flex items-center gap-2">
-                Name
-                <input type="text" className="grow" placeholder="Daisy" />
-              </label>
-              <label className="input input-bordered m-4 flex items-center gap-2">
-                Email
-                <input
-                  type="text"
-                  className="grow"
-                  placeholder="daisy@site.com"
-                />
-              </label>
-              <label className="input input-bordered m-4 flex items-center gap-2">
-                Phone No.
-                <input
-                  type="text"
-                  className="grow"
-                  placeholder="daisy@site.com"
-                />
-              </label>
-              <label className="input input-bordered m-4 flex items-center gap-2">
-                Reasons for contact
-                <input
-                  type="text"
-                  className="grow"
-                  placeholder="daisy@site.com"
-                />
-              </label>
+              <form>
+                <label className="input input-bordered font-medium m-4 flex items-center gap-2">
+                  Name:
+                  <input type="text" className="grow" placeholder="" />
+                </label>
+                <label className="input input-bordered font-medium m-4 flex items-center gap-2">
+                  Email:
+                  <input type="text" className="grow" placeholder="" />
+                </label>
+                <label className="input input-bordered font-medium m-4 flex items-center gap-2">
+                  Phone No.:
+                  <input type="text" className="grow" placeholder="" />
+                </label>
+                <label className="input input-bordered font-medium m-4 flex items-center gap-2">
+                  Reasons for contact:
+                  <input type="text" className="grow" placeholder="" />
+                </label>
+                <div className="flex items-center">
+                  <button className="mx-auto p-2 w-28 text-white bg-slate-900 rounded-lg text-base">
+                    Submit
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-
-      {/* <Team /> */}
     </>
   );
 }

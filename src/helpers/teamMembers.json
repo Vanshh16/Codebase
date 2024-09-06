@@ -1,124 +1,63 @@
- [
-      {
-        "name": "Hari Om Meena",
-        "position": "Coordinator",
-        "achievements": [
-          "Developed a successful e-commerce website with React and Node.js",
-          "Contributed to open-source projects on GitHub",
-          "Speaker at the JSConf 2023"
-        ],
-        "image": "/assets/hari.jpeg",
-        "branch": "Computer Science Engineering",
-        "batch": "2022-2026",
-        "instagram": "https://www.instagram.com/johndoe",
-        "linkedin": "https://www.linkedin.com/in/johndoe",
-        "github": "https://github.com/johndoe"
-      },
-      {
-        "name": "Om",
-        "position": "Co-coordinator",
-        "achievements": [
-          "Designed intuitive user interfaces for mobile apps",
-          "Won the Design Excellence Award in 2022",
-          "Published articles on UX design principles"
-        ],
-        "image": "/assets/om.jpeg",
-        "branch": "Computer Science Engineering",
-        "batch": "2022-2026",
-        "instagram": "https://www.instagram.com/johndoe",
-        "linkedin": "https://www.linkedin.com/in/hari-meena/",
-        "github": "https://github.com/janesmith"
-      },
-      {
-        "name": "Avinesh Rathore",
-        "position": "UI/UX Lead",
-        "achievements": [
-          "Designed intuitive user interfaces for mobile apps",
-          "Won the Design Excellence Award in 2022",
-          "Published articles on UX design principles"
-        ],
-        "image": "/assets/avinesh.jpeg",
-        "branch": "Computer Science Engineering",
-        "batch": "2022-2026",
-        "instagram": "https://www.instagram.com/johndoe",
-        "linkedin": "https://www.linkedin.com/in/avinesh-rathore-a73159257/",
-        "github": "https://github.com/janesmith"
-      },
-      {
-        "name": "Devansh Gupta",
-        "position": "Cloud Lead",
-        "achievements": [
-          "Built scalable APIs with Django and Flask",
-          "Optimized database queries reducing load times by 50%",
-          "Mentored junior developers in backend technologies"
-        ],
-        "image": "/assets/devansh.jpeg",
-        "branch": "Computer Science Engineering",
-        "batch": "2022-2026",
-        "instagram": "https://www.instagram.com/johndoe",
-        "linkedin": "https://www.linkedin.com/in/devansh-gupta-236bb7257/",
-        "github": "https://github.com/alicejohnson"
-      },
-      {
-        "name": "Jash Parmar",
-        "position": "PR and Social Media Lead",
-        "achievements": [
-          "Built scalable APIs with Django and Flask",
-          "Optimized database queries reducing load times by 50%",
-          "Mentored junior developers in backend technologies"
-        ],
-        "image": "/assets/jash.jpeg",
-        "branch": "Computer Science Engineering",
-        "batch": "2022-2026",
-        "instagram": "https://www.instagram.com/johndoe",
-        "linkedin": "https://www.linkedin.com/in/jash-parmar-7973b2255/",
-        "github": "https://github.com/alicejohnson"
-      },
-      {
-        "name": "Gopal Kalsiya",
-        "position": "Web Development Lead",
-        "achievements": [
-          "Built scalable APIs with Django and Flask",
-          "Optimized database queries reducing load times by 50%",
-          "Mentored junior developers in backend technologies"
-        ],
-        "image": "/assets/gopal.jpeg",
-        "branch": "Electronics and Communication Engineering",
-        "batch": "2022-2026",
-        "instagram": "https://www.instagram.com/johndoe",
-        "linkedin": "https://www.linkedin.com/in/gopal-kalsiya/",
-        "github": "https://github.com/alicejohnson"
-      },
-      {
-        "name": "Anany Srivasta",
-        "position": "ML Lead",
-        "achievements": [
-          "Built scalable APIs with Django and Flask",
-          "Optimized database queries reducing load times by 50%",
-          "Mentored junior developers in backend technologies"
-        ],
-        "image": "/assets/anany.jpeg",
-        "branch": "Computer Science Engineering",
-        "batch": "2022-2026",
-        "instagram": "https://www.instagram.com/johndoe",
-        "linkedin": "https://www.linkedin.com/in/anany-srivastava-81a582257/",
-        "github": "https://github.com/alicejohnson"
-      },
-      {
-        "name": "Vansh Nigam",
-        "position": "Web Development Lead",
-        "achievements": [
-          "Built scalable APIs with Django and Flask",
-          "Optimized database queries reducing load times by 50%",
-          "Mentored junior developers in backend technologies"
-        ],
-        "image": "/assets/vansh.jpeg",
-        "branch": "Electronics and Communication Engineering",
-        "batch": "2022-2026",
-        "instagram": "https://www.instagram.com/johndoe",
-        "linkedin": "https://www.linkedin.com/in/vansh-nigam-740675204/",
-        "github": "https://github.com/alicejohnson"
-      }
-    ]
-
+[
+    {
+      "team": "Web Dev",
+      "members": [
+        {
+          "name": "Hari Om Meena",
+          "image": "/assets/hari.jpeg",
+          "linkedin": "https://www.linkedin.com/in/hariom-meena"
+        },
+        {
+          "name": "Anjali Sharma",
+          "image": "/assets/anjali.jpeg",
+          "linkedin": "https://www.linkedin.com/in/anjali-sharma"
+        }
+      ]
+    },
+    {
+      "team": "App Dev",
+      "members": [
+        {
+          "name": "Rohan Gupta",
+          "image": "/assets/rohan.jpeg",
+          "linkedin": "https://www.linkedin.com/in/rohan-gupta"
+        },
+        {
+          "name": "Simran Kaur",
+          "image": "/assets/simran.jpeg",
+          "linkedin": "https://www.linkedin.com/in/simran-kaur"
+        }
+      ]
+    },
+    {
+      "team": "PR/Social Media",
+      "members": [
+        {
+          "name": "Priya Verma",
+          "image": "/assets/priya.jpeg",
+          "linkedin": "https://www.linkedin.com/in/priya-verma"
+        },
+        {
+          "name": "Manish Patel",
+          "image": "/assets/manish.jpeg",
+          "linkedin": "https://www.linkedin.com/in/manish-patel"
+        }
+      ]
+    },
+    {
+      "team": "Cloud/ML",
+      "members": [
+        {
+          "name": "Aditi Rao",
+          "image": "/assets/aditi.jpeg",
+          "linkedin": "https://www.linkedin.com/in/aditi-rao"
+        },
+        {
+          "name": "Kartik Singh",
+          "image": "/assets/kartik.jpeg",
+          "linkedin": "https://www.linkedin.com/in/kartik-singh"
+        }
+      ]
+    }
+  ]
   
