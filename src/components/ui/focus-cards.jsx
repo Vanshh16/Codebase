@@ -37,7 +37,7 @@ export function Card({ member, index, hovered, setHovered }) {
   </div>
 };
 
-export default function FocusCards({ members }) {
+export function FocusCards({ members }) {
   const [hovered, setHovered] = useState(null);
   console.log(members);
 

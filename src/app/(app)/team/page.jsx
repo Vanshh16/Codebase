@@ -39,9 +39,6 @@ function Team() {
             <div className="text-left">
             <h1 className="mt-10 lg:ml-[-30rem] -mb-60 bg-gradient-to-br from-slate-300 to-slate-500 bg-clip-text text-left text-4xl font-medium tracking-tight text-transparent md:text-7xl">
               <Link href="/alumni">Alumni <ArrowRight className="inline" size={48} color="#cbd5e1" /></Link>
-              
-              
-              
             </h1>
             </div>
           </LampContainer>

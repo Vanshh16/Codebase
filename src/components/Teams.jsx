@@ -2,7 +2,7 @@
 import React from "react";
 import { TeamCard } from "./ui/TeamCard";
 import teamMembers from "@/helpers/teamMembers.json";
-import FocusCards from "./ui/focus-cards";
+import {FocusCards} from "./ui/focus-cards";
 
 function Teams() {
   return (
