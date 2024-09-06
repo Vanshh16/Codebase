@@ -3,9 +3,8 @@ import React from "react";
 import { StickyScrollRevealDemo } from "@/components/FF";
 import { LampContainer } from "@/components/ui/lamp";
 import { motion } from "framer-motion";
-import { ExpandableCardDemo } from "@/components/AlumniCard";
 import Teams from "@/components/Teams";
-import { ArrowBigRight, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 function Team() {
   return (

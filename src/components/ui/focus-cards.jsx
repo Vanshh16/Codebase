@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 
-export const Card = React.memo(({ member, index, hovered, setHovered }) => (
+export function Card({ member, index, hovered, setHovered }) { 
   <div
     onMouseEnter={() => setHovered(index)}
     onMouseLeave={() => setHovered(null)}
@@ -35,7 +35,7 @@ export const Card = React.memo(({ member, index, hovered, setHovered }) => (
       </div>
     </div>
   </div>
-));
+};
 
 export default function FocusCards({ members }) {
   const [hovered, setHovered] = useState(null);
