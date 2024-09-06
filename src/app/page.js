@@ -1,113 +1,185 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import React, { useRef } from "react";
+import cb from "@/assets/cb.png";
+import bg1 from "@/assets/bg1.png";
+import Image from "next/image";
+import { SparklesCore } from "@/components/ui/sparkles";
+import Carousel from "@/components/Carousel";
+import { GlobeDemo } from "@/components/Globe";
+import { Events } from "@/components/Events";
+import { Vortex } from "@/components/ui/vortex";
+
+function Home() {
+  const imageRef = useRef(null);
+
+  const handleMouseMove = (e) => {
+    if (imageRef.current) {
+      const rect = imageRef.current.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left;
+      const offsetY = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const deltaX = offsetX - centerX;
+      const deltaY = offsetY - centerY;
+
+      // Calculate 3D transform values
+      const transformX = (deltaX / centerX) * 10; // Max tilt: 10 degrees
+      const transformY = -(deltaY / centerY) * 10; // Max tilt: -10 degrees
+      const scale =
+        1 + ((Math.abs(deltaX) + Math.abs(deltaY)) / (centerX + centerY)) * 0.2; // Scale effect
+
+      imageRef.current.style.transform = `perspective(500px) rotateX(${transformY}deg) rotateY(${transformX}deg) scale(${scale})`;
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (imageRef.current) {
+      // Reset the transformation to the original state
+      imageRef.current.style.transform =
+        "perspective(500px) rotateX(0deg) rotateY(0deg) scale(1)";
+    }
+  };
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <>
+      <div className="relative flex justify-center items-center min-h-screen bg-gradient">
+        <div className="absolute inset-0 opacity-50"></div>
+
+        <div className="w-full mt-48 relative z-10 p-8 space-y-8 rounded-lg shadow-md">
+          <div className="items-center flex flex-col lg:grid lg:grid-cols-2 lg:gap-10">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src={bg1}
+              alt="Background Image"
+              className="absolute mx-auto z-10 inset-0 w-full h-[40rem] opacity-10"
             />
-          </a>
+            <div className="mx-auto mt-40 lg:my-auto space-y-4">
+              <h1 className="text-4xl md:ml-32 font-bold text-blue-800">
+                IIIT KOTA
+              </h1>
+              <h2 className="text-6xl md:ml-32 tracking-widest font-extrabold text-white">
+                CODEBASE
+              </h2>
+              <div className="w-[20rem] md:w-[40rem] h-40 relative">
+                {/* Gradients */}
+                <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+                <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+                <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+                <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+
+                {/* Core component */}
+                {/* <SparklesCore
+                  background="transparent"
+                  minSize={0.4}
+                  maxSize={1}
+                  particleDensity={1200}
+                  className="w-full h-40"
+                  particleColor="#FFFFFF"
+                /> */}
+
+                {/* Radial Gradient to prevent sharp edges */}
+                {/* <div className="absolute inset-0 w-full h-full custom-gradient [mask-image:radial-gradient(350px_200px_at_top,transparent_70%,white)]"></div> */}
+              </div>
+              <p className="text-slate-100 tracking-widest font-normal italic text-lg my-4 md:ml-28">
+                IIIT Kota's Open Source Technical Society champions cutting-edge
+                open-source technologies within its vibrant academic community.
+              </p>
+            </div>
+            <div
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              className="flex justify-center items-center"
+            >
+              <div className="w-[calc(100%-4rem)] hidden md:block mx-auto rounded-md  h-[25rem] overflow-hidden">
+                <Vortex
+                rangeY={150}
+                particleCount={1000}
+                baseHue={120}
+                  backgroundColor="#FFFFFF00"
+                  className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-40 h-96"
+                ></Vortex>
+              </div>
+
+              <Image
+                src={cb}
+                alt="Codebase Logo"
+                className="w-40 md:absolute md:top-10 rotatinngImage md:w-96 h-auto z-20"
+                ref={imageRef}
+              />
+            </div>
+          </div>
+          <div className="h-40 bg-transparent flex flex-col items-center mx-auto space-y-4"></div>
+          <div className="md:mt-80 rounded-xl bg-slate-950 p-8 flex flex-col items-center mx-auto space-y-4">
+            {/* <h1 className="text-4xl font-bold text-blue-800">IIIT KOTA</h1> */}
+            <h2 className="md:text-5xl text-2xl pt-2 tracking-wider font-semibold text-white">
+              Who are we?
+            </h2>
+            <p className="text-slate-100 tracking-wide leading-8 font-normal text-sm md:text-lg my-4 mx-8">
+              The Codebase club at IIIT Kota is a vibrant community dedicated to
+              fostering creativity and innovation in the realm of technology.
+              Comprising passionate students from diverse backgrounds, the club
+              serves as a platform for learning, collaboration, and hands-on
+              experience in coding and software development. Through workshops,
+              hackathons, and regular coding challenges, Codebase encourages its
+              members to explore cutting-edge technologies, refine their
+              programming skills, and tackle real-world problems. The club not
+              only emphasizes technical proficiency but also promotes teamwork
+              and leadership, preparing its members to excel in the rapidly
+              evolving tech industry. With a supportive and inclusive
+              atmosphere, Codebase at IIIT Kota stands as a cornerstone for
+              aspiring technologists to grow and thrive in their journey towards
+              becoming proficient software developers and innovators.
+            </p>
+          </div>
+          {/* <div className="md:mt-80 rounded-xl bg-gradient-to-b from-slate-950 to-slate-900 p-8 flex flex-col items-center mx-auto space-y-4"> */}
+          <Events />
+          {/* </div> */}
+          <div className="md:mt-80 rounded-xl bg-gradient-to-b from-slate-950 to-slate-900 p-8 flex flex-col items-center mx-auto space-y-4">
+            <h2 className="text-5xl mb-4 tracking-widest font-semibold text-white">
+              Gallery
+            </h2>
+            <Carousel />
+          </div>
+          <div
+            id="contact-us"
+            className="hidden lg:grid grid-cols-1 lg:grid-cols-2"
+          >
+            <GlobeDemo />
+            <div className="p-8 bg-black rounded-lg">
+              <h2 className="text-6xl md:ml-32 tracking-widest font-extrabold text-white">
+                Join Us
+              </h2>
+              <form>
+                <label className="input input-bordered font-medium m-4 flex items-center gap-2">
+                  Name:
+                  <input type="text" className="grow" placeholder="" />
+                </label>
+                <label className="input input-bordered font-medium m-4 flex items-center gap-2">
+                  Email:
+                  <input type="text" className="grow" placeholder="" />
+                </label>
+                <label className="input input-bordered font-medium m-4 flex items-center gap-2">
+                  Phone No.:
+                  <input type="text" className="grow" placeholder="" />
+                </label>
+                <label className="input input-bordered font-medium m-4 flex items-center gap-2">
+                  Reasons for contact:
+                  <input type="text" className="grow" placeholder="" />
+                </label>
+                <div className="flex items-center">
+                  <button className="mx-auto p-2 w-28 text-white bg-slate-900 rounded-lg text-base">
+                    Submit
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   );
 }
+
+export default Home;
