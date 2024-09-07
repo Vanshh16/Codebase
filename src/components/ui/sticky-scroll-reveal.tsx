@@ -167,7 +167,7 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "hidden lg:block h-80 w-[28rem] rounded-md bg-white sticky top-10 overflow-hidden",
+          "hidden lg:block h-96 w-[28rem] rounded-md bg-white sticky top-10 overflow-hidden",
           contentClassName
         )}
       >
@@ -175,7 +175,7 @@ export const StickyScroll = ({
           <Image
             src={content[activeCard].image}
             width={500}
-            height={500}
+            height={100}
             className="h-full w-full object-cover"
             alt="linear board demo"
           /> : null}

@@ -3,12 +3,12 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 
-export function Card({ member, index, hovered, setHovered }) { 
+export const Card = React.memo(({ member, index, hovered, setHovered }) => (
   <div
     onMouseEnter={() => setHovered(index)}
     onMouseLeave={() => setHovered(null)}
     className={cn(
-      "rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-60 md:h-96 w-[15rem] md:w-[20rem] transition-all duration-300 ease-out",
+      "rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden md:h-60 lg:h-72 h-40 w-[10rem] md:w-[15rem] lg:w-[15rem] transition-all duration-300 ease-out",
       hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
     )}
   >
@@ -35,14 +35,15 @@ export function Card({ member, index, hovered, setHovered }) {
       </div>
     </div>
   </div>
-};
+));
+
+Card.displayName = 'Card';
 
 export function FocusCards({ members }) {
   const [hovered, setHovered] = useState(null);
-  console.log(members);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-24 my-4 md:px-2 mx-auto w-full md:w-screen">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 px-24 my-4 md:px-2 w-screen">
       {members.map((member, index) => (
         <Card
           key={member.name}

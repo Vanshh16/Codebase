@@ -11,7 +11,7 @@ const content = leadMembers;
 export function StickyScrollRevealDemo() {
   return (
     <>
-      <div className="hidden lg:block">
+      <div className="hidden lg:px-20 lg:block">
         <StickyScroll content={content} />
       </div>
       <div className=" lg:hidden">

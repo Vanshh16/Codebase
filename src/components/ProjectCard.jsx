@@ -18,10 +18,10 @@ export function CardDemo({ link1, link2, link3, title }) {
       >
         <div className="text relative z-50">
           <Link href="/projects" className="">
-            <h1 className="font-bold text-xl md:text-3xl text-gray-50 relative">
+            <h1 className="font-bold text-lg md:text-xl lg:text-2xl text-gray-50 relative">
               {title}
             </h1>
-            <p className="font-normal text-base text-gray-50 relative my-4">
+            <p className="font-normal text-xs md:text-base lg:text-lg text-gray-50 relative my-4">
               This card is for some special elements, like displaying background
               gifs on hover only.
             </p>

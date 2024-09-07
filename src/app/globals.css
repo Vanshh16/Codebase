@@ -125,7 +125,7 @@
     border-radius: 8px; /* Rounded corners */
   }
 
-  .rotatinngImage {
+  .animation {
     animation: upDown 4s linear infinite;
 }
 .interactiveImage {
@@ -151,4 +151,10 @@
 }
 .custom-gradient {
   @apply bg-gradient-to-r from-black via-[#030f25] to-[#030C1D];
+}
+
+#navbar {
+  background-color: transparent; /* Black background color */
+  position: fixed; /* Make it stick/fixed */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
 }

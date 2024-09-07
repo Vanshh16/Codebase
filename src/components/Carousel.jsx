@@ -4,20 +4,20 @@ import React from 'react'
 function Carousel() {
   return (
     <div className="carousel space-x-4 carousel-center rounded-box">
-  <div className="carousel-item h-[30rem]">
+  <div className="carousel-item h-[15rem] md:h-[30rem]">
     <img src="/assets/gallery1.jpg" alt="Pizza" />
   </div>
-  <div className="carousel-item h-[30rem]">
+  <div className="carousel-item h-[15rem] md:h-[30rem]">
     <img
       src="/assets/gallery2.jpg"
       alt="Pizza" />
   </div>
-  <div className="carousel-item h-[30rem]">
+  <div className="carousel-item h-[15rem] md:h-[30rem]">
     <img
       src="/assets/gallery3.jpg"
       alt="Pizza" />
   </div>
-  <div className="carousel-item h-[30rem]">
+  <div className="carousel-item h-[15rem] md:h-[30rem]">
     <img
       src="/assets/gallery4.jpg"
       alt="Pizza" />

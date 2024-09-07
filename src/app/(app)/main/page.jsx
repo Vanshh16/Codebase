@@ -11,112 +11,65 @@ import { Events } from "@/components/Events";
 import { Vortex } from "@/components/ui/vortex";
 
 function Main() {
-  const imageRef = useRef(null);
-
-  const handleMouseMove = (e) => {
-    if (imageRef.current) {
-      const rect = imageRef.current.getBoundingClientRect();
-      const offsetX = e.clientX - rect.left;
-      const offsetY = e.clientY - rect.top;
-
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const deltaX = offsetX - centerX;
-      const deltaY = offsetY - centerY;
-
-      // Calculate 3D transform values
-      const transformX = (deltaX / centerX) * 10; // Max tilt: 10 degrees
-      const transformY = -(deltaY / centerY) * 10; // Max tilt: -10 degrees
-      const scale =
-        1 + ((Math.abs(deltaX) + Math.abs(deltaY)) / (centerX + centerY)) * 0.2; // Scale effect
-
-      imageRef.current.style.transform = `perspective(500px) rotateX(${transformY}deg) rotateY(${transformX}deg) scale(${scale})`;
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (imageRef.current) {
-      // Reset the transformation to the original state
-      imageRef.current.style.transform =
-        "perspective(500px) rotateX(0deg) rotateY(0deg) scale(1)";
-    }
-  };
-
   return (
     <>
-      <div className="relative flex justify-center items-center min-h-screen bg-gradient">
+      <div className="relative flex justify-center items-center w-auto min-h-screen bg-gradient">
         <div className="absolute inset-0 opacity-50"></div>
 
-        <div className="w-full mt-48 relative z-10 p-8 space-y-8 rounded-lg shadow-md">
+        <div className="w-full mt-20 md:mt-48 relative z-10 p-8 space-y-8 rounded-lg shadow-md">
           <div className="items-center flex flex-col lg:grid lg:grid-cols-2 lg:gap-10">
             <Image
               src={bg1}
               alt="Background Image"
-              className="absolute mx-auto z-10 inset-0 w-full h-[40rem] opacity-10"
+              className="absolute mx-auto z-10 inset-0 w-[0%] h-auto md:w-full md:h-[40rem] opacity-10"
             />
-            <div className="mx-auto mt-40 lg:my-auto space-y-4">
-              <h1 className="text-4xl md:ml-32 font-bold text-blue-800">
+            <div className="mx-auto md:mt-40 lg:my-auto space-y-4">
+              <h1 className=" text-xl md:text-4xl md:ml-32 font-bold text-blue-800">
                 IIIT KOTA
               </h1>
-              <h2 className="text-6xl md:ml-32 tracking-widest font-extrabold text-white">
+              <h2 className=" text-2xl md:text-6xl md:ml-32 tracking-widest font-extrabold text-white">
                 CODEBASE
               </h2>
-              <div className="w-[20rem] md:w-[40rem] h-40 relative">
+              <div className="w-[12rem] h-16 md:w-[40rem] md:h-40 relative">
                 {/* Gradients */}
-                <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
-                <div className="absolute inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
-                <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
-                <div className="absolute inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+                <div className="absolute left-5 md:left-auto inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+                <div className="absolute left-5 md:left-auto inset-x-20 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+                <div className="absolute left-5 md:left-auto inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[5px] w-1/4 blur-sm" />
+                <div className="absolute left-5 md:left-auto inset-x-60 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
 
                 {/* Core component */}
-                {/* <SparklesCore
+                <SparklesCore
                   background="transparent"
                   minSize={0.4}
                   maxSize={1}
                   particleDensity={1200}
-                  className="w-full h-40"
+                  className="md:w-full h-20 md:h-40"
                   particleColor="#FFFFFF"
-                /> */}
+                />
 
                 {/* Radial Gradient to prevent sharp edges */}
-                {/* <div className="absolute inset-0 w-full h-full custom-gradient [mask-image:radial-gradient(350px_200px_at_top,transparent_70%,white)]"></div> */}
+                <div className="absolute inset-0 w-full h-full custom-gradient [mask-image:radial-gradient(350px_200px_at_top,transparent_70%,white)]"></div>
               </div>
-              <p className="text-slate-100 tracking-widest font-normal italic text-lg my-4 md:ml-28">
+              <p className="text-slate-100 tracking-widest font-normal italic text-sm md:text-lg mt-4 my-4 md:ml-28">
                 IIIT Kota's Open Source Technical Society champions cutting-edge
                 open-source technologies within its vibrant academic community.
               </p>
             </div>
-            <div
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-              className="flex justify-center items-center"
-            >
-              <div className="w-[calc(100%-4rem)] hidden md:block mx-auto rounded-md  h-[25rem] overflow-hidden">
-                <Vortex
-                rangeY={150}
-                particleCount={1000}
-                baseHue={120}
-                  backgroundColor="#FFFFFF00"
-                  className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-40 h-96"
-                ></Vortex>
-              </div>
-
+            <div className="flex justify-center items-center">
               <Image
                 src={cb}
                 alt="Codebase Logo"
-                className="w-40 md:absolute md:top-10 rotatinngImage md:w-96 h-auto z-20"
-                ref={imageRef}
+                className="w-40 animation md:w-96 h-auto z-20"
               />
             </div>
           </div>
-          <div className="h-40 bg-transparent flex flex-col items-center mx-auto space-y-4"></div>
-          <div className="md:mt-80 rounded-xl bg-slate-950 p-8 flex flex-col items-center mx-auto space-y-4">
+          {/* <div className="h-40 bg-transparent flex flex-col items-center mx-auto space-y-4"></div> */}
+          <div className="md:mt-80 rounded-xl bg-slate-950 p-5 md:p-8 flex flex-col items-center mx-auto space-y-4">
             {/* <h1 className="text-4xl font-bold text-blue-800">IIIT KOTA</h1> */}
-            <h2 className="md:text-5xl text-2xl pt-2 tracking-wider font-semibold text-white">
+            <h2 className="md:text-5xl text-2xl pt-2 md:tracking-wider font-semibold text-white">
               Who are we?
             </h2>
-            <p className="text-slate-100 tracking-wide leading-8 font-normal text-sm md:text-lg my-4 mx-8">
+            <p className="text-slate-100 md:tracking-wide md:leading-8 font-normal text-sm md:text-lg my-4 md:mx-8">
               The Codebase club at IIIT Kota is a vibrant community dedicated to
               fostering creativity and innovation in the realm of technology.
               Comprising passionate students from diverse backgrounds, the club
@@ -136,37 +89,37 @@ function Main() {
           {/* <div className="md:mt-80 rounded-xl bg-gradient-to-b from-slate-950 to-slate-900 p-8 flex flex-col items-center mx-auto space-y-4"> */}
           <Events />
           {/* </div> */}
-          <div className="md:mt-80 rounded-xl bg-gradient-to-b from-slate-950 to-slate-900 p-8 flex flex-col items-center mx-auto space-y-4">
-            <h2 className="text-5xl mb-4 tracking-widest font-semibold text-white">
+          <div className="md:mt-80 rounded-xl bg-gradient-to-b from-slate-950 to-slate-900 p-4 md:p-8 flex flex-col items-center mx-auto space-y-4">
+            <h2 className="md:text-5xl text-2xl md:mb-4 md:tracking-widest font-semibold text-white">
               Gallery
             </h2>
             <Carousel />
           </div>
           <div
             id="contact-us"
-            className="hidden lg:grid grid-cols-1 lg:grid-cols-2"
+            className="grid bg-black grid-cols-1 lg:grid-cols-2"
           >
             <GlobeDemo />
-            <div className="p-8 bg-black rounded-lg">
-              <h2 className="text-6xl md:ml-32 tracking-widest font-extrabold text-white">
+            <div className="p-4 md:p-8 bg-black rounded-lg">
+              <h2 className="md:text-5xl ml-12 text-2xl md:ml-40 mt-20 tracking-widest font-extrabold text-white">
                 Join Us
               </h2>
-              <form>
-                <label className="input input-bordered font-medium m-4 flex items-center gap-2">
+              <form className="my-auto">
+                <label className="input text-sm input-bordered p-1 leading-3 font-medium m-4 flex items-center gap-2">
                   Name:
-                  <input type="text" className="grow" placeholder="" />
+                  <input type="text" className="w-10"  placeholder="" />
                 </label>
-                <label className="input input-bordered font-medium m-4 flex items-center gap-2">
+                <label className="input text-sm input-bordered p-1 leading-3 font-medium m-4 flex items-center gap-2">
                   Email:
-                  <input type="text" className="grow" placeholder="" />
+                  <input type="text" className="w-10" placeholder="" />
                 </label>
-                <label className="input input-bordered font-medium m-4 flex items-center gap-2">
+                <label className="input text-sm input-bordered p-1 leading-3 font-medium m-4 flex items-center gap-2">
                   Phone No.:
-                  <input type="text" className="grow" placeholder="" />
+                  <input type="text" className="w-10" placeholder="" />
                 </label>
-                <label className="input input-bordered font-medium m-4 flex items-center gap-2">
+                <label className="input text-sm input-bordered p-1 leading-3 font-medium m-4 flex items-center gap-2">
                   Reasons for contact:
-                  <input type="text" className="grow" placeholder="" />
+                  <input type="text" className="w-10" placeholder="" />
                 </label>
                 <div className="flex items-center">
                   <button className="mx-auto p-2 w-28 text-white bg-slate-900 rounded-lg text-base">
