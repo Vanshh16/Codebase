@@ -25,13 +25,13 @@ window.onscroll = function() {
     <nav id="navbar" className="fixed inset-x-0 top-4 z-50 text-white shadow-sm">
       <div className="w-[40%] md:w-full max-w-7xl px-4">
         <div className="flex justify-between h-14 items-center">
-          <Link href="/main" className="hidden md:flex items-center space-x-3" prefetch={false}>
+          <Link href="/" className="hidden md:flex items-center space-x-3" prefetch={false}>
             <Image className="size-10" width={40} height={40} src="/assets/cb.png" />
             <span className="font-medium hidden md:block text-lg">CODEBASE</span>
           </Link>
           <nav className="rounded-full bg-black border-white/[0.1] py-1 px-2 md:py-4 md:px-8 border md:space-x-4 flex md:gap-4 shadow-sm">
             <Link
-              href="/main"
+              href="/"
               className="font-medium flex items-center text-xs md:text-base transition-colors py-1 px-2 rounded-lg hover:border-zinc-800 border border-transparent"
               prefetch={false}
             >
@@ -59,7 +59,7 @@ window.onscroll = function() {
               Events
             </Link>
             <Link
-              href="#contact-us"
+              href="/#contact-us"
               className="font-medium flex items-center text-xs md:text-base transition-colors py-1 px-2 rounded-lg hover:border-zinc-800 border border-transparent"
               prefetch={false}
             >

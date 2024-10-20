@@ -2,13 +2,13 @@
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-export function CardDemo({ link1, link2, link3, title }) {
+export function CardDemo({ link1, link2, link3, title, description }) {
   const l1 = link1;
   const l2 = link2;
   const l3 = link3;
 
   return (
-    <div className="max-w-xs w-full bg-slate-950">
+    <div className="max-w-xs w-full bg-gradient-to-r from-slate-900 to-black">
       <div
         className={`group w-full cursor-pointer overflow-hidden relative card h-80 rounded-md shadow-xl mx-auto flex flex-col justify-end p-4 border border-transparent dark:border-neutral-800 
         ${l3} bg-no-repeat hover:bg-cover 
@@ -22,8 +22,7 @@ export function CardDemo({ link1, link2, link3, title }) {
               {title}
             </h1>
             <p className="font-normal text-xs md:text-base lg:text-lg text-gray-50 relative my-4">
-              This card is for some special elements, like displaying background
-              gifs on hover only.
+            {description}
             </p>
           </Link>
         </div>
